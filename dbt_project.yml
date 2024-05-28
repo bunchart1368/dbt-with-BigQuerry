@@ -40,3 +40,6 @@ models:
     # Applies to all files under models/example/
     top10_stackoverflow_question:
       +materialized: table
+    trend_analysis:
+      +materialized: table
+  

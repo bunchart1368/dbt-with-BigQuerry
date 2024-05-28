@@ -41,3 +41,19 @@ models:
         description: "The number of comments for the question"
       - name: total_interactions
         description: "The total number of interactions (answers + comments)"
+        
+  - name: trends_over_time
+    description: "Shows trends in TensorFlow-related questions over time"
+    columns:
+      - name: year
+        description: "The year when the questions were created"
+        tests:
+          - not_null
+      - name: month
+        description: "The month when the questions were created"
+        tests:
+          - not_null
+      - name: num_questions
+        description: "The number of questions created in the specified month"
+        tests:
+          - not_null
