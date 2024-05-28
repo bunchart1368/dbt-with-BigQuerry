@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: question_answers
+    description: "Counts the number of answers for TensorFlow questions"
+    columns:
+      - name: question_id
+        description: "The unique identifier for the question"
+        tests:
+          - unique
+          - not_null
+      - name: question_title
+        description: "The title of the question"
+      - name: num_answers
+        description: "The number of answers for the question"
+
+  - name: question_comments
+    description: "Counts the number of comments for TensorFlow questions"
+    columns:
+      - name: question_id
+        description: "The unique identifier for the question"
+        tests:
+          - unique
+          - not_null
+      - name: num_comments
+        description: "The number of comments for the question"
+
+  - name: final
+    description: "Combines the counts of answers and comments for TensorFlow questions and orders by total interactions"
+    columns:
+      - name: question_id
+        description: "The unique identifier for the question"
+        tests:
+          - unique
+          - not_null
+      - name: question_title
+        description: "The title of the question"
+      - name: num_answers
+        description: "The number of answers for the question"
+      - name: num_comments
+        description: "The number of comments for the question"
+      - name: total_interactions
+        description: "The total number of interactions (answers + comments)"
